@@ -1,25 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Nacionalidad;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Tipopermiso;
 
-class nacionalidadController extends Controller
+class tipoPermisoController extends Controller
 {
-        public function index(){
-            $nacionalidad=Nacionalidad::all();
-        
-            $data=[
-                "Nacionalidad" => $nacionalidad,
-                "status" => 200
-            ];
-            return response()->json($data,200);
-            //return "Obteniendo lista de Nacionalidads del contNacionalidadador";
+    public function index(){
+        $nacionalidad=Tipopermiso::all();
+       
+        $data=[
+            "Nacionalidad" => $nacionalidad,
+            "status" => 200
+        ];
+        return response()->json($data,200);
+        //return "Obteniendo lista de Nacionalidads del contNacionalidadador";
 
-        }
+    }
+
     public function store(Request $request){
         $data=[
             "mesaje " => "este modulo no permite crear, solo el administrador de base de datos lo puede hacer",
@@ -29,7 +28,7 @@ class nacionalidadController extends Controller
         
     }
     public function show($id){
-        $Nacionalidad=Nacionalidad::find($id);
+        $Nacionalidad=Tipopermiso::find($id);
         if(!$Nacionalidad){
             $data=[
                 "mensage" => " No se encontro Nacionalidad",
@@ -59,7 +58,7 @@ class nacionalidadController extends Controller
         return response()->json([$data],400);
         
     }
-    public function updatePartial(Request $request,$id){
+    public function updatePartial(){
         $data=[
             "mesaje " => "este modulo no permite actualizar, solo el administrador de base de datos lo puede hacer",
             "status" => 400

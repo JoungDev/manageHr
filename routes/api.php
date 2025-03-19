@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\rolController;
 use App\Http\Controllers\Api\epsController;
 use App\Http\Controllers\Api\nacionalidadController;
 use App\Http\Controllers\Api\generoController;
+use App\Http\Controllers\tipoPermisoController;
 
 Route::get('/rols', [rolController::class, 'index']);
 Route::post('/rols',[rolController::class, 'store']);
@@ -35,3 +36,10 @@ Route::put('/genero/{id}',[generoController::class, 'update']);
 Route::get('/genero/{id}',[generoController::class, 'show']);
 Route::patch('/genero/{id}',[generoController::class, 'updatePartial']);
 Route::delete('/genero/{id}',[generoController::class,'destroy'] );
+
+Route::get('/tipopermiso', [tipoPermisoController::class, 'index']);
+Route::post('/tipopermiso',[tipoPermisoController::class, 'store']);
+Route::put('/tipopermiso/{id}',[tipoPermisoController::class, 'update']);
+Route::get('/tipopermiso/{id}',[tipoPermisoController::class, 'show']);
+Route::patch('/tipopermiso/{id}',[tipoPermisoController::class, 'updatePartial']);
+Route::delete('/tipopermiso/{id}',[tipoPermisoController::class,'destroy'] );
